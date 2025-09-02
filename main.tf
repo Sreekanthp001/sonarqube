@@ -44,7 +44,7 @@ resource "aws_security_group" "sonarqube" {
 
 resource "aws_route53_record" "sonarqube" {
   zone_id = var.zone_id
-  name    = "sonarqube.${var.domain_name}"
+  name    = "sonarqube.${var.zone_name}"
   type    = "A"
   ttl     = 1
   records = [aws_instance.sonarqube.public_ip]
